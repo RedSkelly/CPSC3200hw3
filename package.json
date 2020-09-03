@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fix:php": "prettier *.php --write"
+    "fix:php": "prettier *{.php,.html} --write"
   },
   "repository": {
     "type": "git",
