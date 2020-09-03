@@ -1,0 +1,23 @@
+{
+  "name": "hw3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fix:php": "prettier *.php --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedSkelly/CPSC3200hw3.git"
+  },
+  "author": "Shaun Kelly & Michael Kaylor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedSkelly/CPSC3200hw3/issues"
+  },
+  "homepage": "https://github.com/RedSkelly/CPSC3200hw3#readme",
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.14.3",
+    "prettier": "^2.1.1"
+  }
+}
