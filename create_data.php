@@ -196,11 +196,14 @@
     	}
     }
 
-    $customerArray = implode(':', $customerArray);
-    // $customerFile = fopen("customers.txt", "w");
-    // fwrite($customerFile, $customerArray);
-    // fclose($customerFile);
-    file_put_contents('customers.txt', $customerArray);
+    for ($i = 0; $i < sizeof($customerInfo) * 4; $i++) {
+    	if (($i % 4) == 3) {
+            $customerArrayFinal[$i] = $customerArray[$i-3].":". $customerArray[$i -2].":". $customerArray[$i-1].":". $customerArray[$i]."\n";
+    	}
+    }
+    
+    file_put_contents('customers.txt', $customerArrayFinal);
+    
     ?>
 
 </html>

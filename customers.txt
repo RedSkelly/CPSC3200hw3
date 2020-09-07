@@ -1,1 +1,25 @@
-Amanada:Cromwell:455 Brest Lane:Amanada.Cromwell@gmail.com:Jean:Smith:878 Imus Boulevard:Jean.Smith@hotmail.com:Scott:Larue:757 Bisling Loop:Scott.Larue@gmail.com:Leslie:Burleson:927 Munger Way:Leslie.Burleson@facebook.com:Chris:Wofford:655 Okara Drive:Chris.Wofford@chattstate.edu:Jessee:Shoemaker:721 Hino Street:Jessee.Shoemaker@exchange.com:Sharon:Swanson:811 Isesaki Loop:Sharon.Swanson@utc.edu:Erin:Eggleston:109 Kabul Loop:Erin.Eggleston@utc.edu:Fred:Olvera:347 Purnia Street:Fred.Olvera@yahoo.com:Joseph:Hannon:973 Hanoi Avenue:Joseph.Hannon@yahoo.com:Sally:Duggan:776 Aurora Way:Sally.Duggan@exchange.com:Raymond:Vest:964 Santiago Boulevard:Raymond.Vest@utc.edu:Conrad:McCarter:779 Kabul Drive:Conrad.McCarter@hotmail.com:Allison:Pitt:104 Garland Boulevard:Allison.Pitt@facebook.com:Patricia:Lombardi:538 Aurora Circle:Patricia.Lombardi@google.com:Claire:Oglesby:745 Halifax Street:Claire.Oglesby@chattstate.edu:Craig:Gunderson:354 Halifax Manor:Craig.Gunderson@hotmail.com:Robert:McAlister:481 Lancaster Way:Robert.McAlister@exchange.com:Roger:Chisholm:608 Brest Manor:Roger.Chisholm@hotmail.com:Russell:Grey:798 Aurora Boulevard:Russell.Grey@facebook.com:David:Gafney:150 Izumisano Street:David.Gafney@google.com:Samantha:Gruber:554 Munger Lane:Samantha.Gruber@chattstate.edu:Holly:Banda:597 Munger Circle:Holly.Banda@facebook.com:Alicia:Gardiner:312 Hino Drive:Alicia.Gardiner@chattstate.edu:James:Lumpkin:213 Korolev Circle:James.Lumpkin@yahoo.com
+Holly:Duggan:287 Hino Parkway:Holly.Duggan@utc.edu
+Jean:Chisholm:207 Isesaki Loop:Jean.Chisholm@hotmail.com
+Patricia:Eggleston:603 Kowloon Manor:Patricia.Eggleston@exchange.com
+Scott:Smith:557 Loja Parkway:Scott.Smith@exchange.com
+Russell:McCarter:685 Iligan Drive:Russell.McCarter@hotmail.com
+Chris:Wofford:838 Garland Street:Chris.Wofford@utc.edu
+Jessee:Swanson:739 Purnia Loop:Jessee.Swanson@utc.edu
+Amanada:Grey:522 Kowloon Avenue:Amanada.Grey@gmail.com
+Alicia:Vest:598 Garland Avenue:Alicia.Vest@hotmail.com
+Sally:Gardiner:377 Korolev Parkway:Sally.Gardiner@utc.edu
+Conrad:Olvera:496 Loja Boulevard:Conrad.Olvera@hotmail.com
+Fred:Shoemaker:469 Cam Ranh Avenue:Fred.Shoemaker@exchange.com
+Sharon:Hannon:707 Aurora Drive:Sharon.Hannon@utc.edu
+Leslie:Larue:299 Munger Lane:Leslie.Larue@yahoo.com
+Claire:McAlister:227 Izumisano Manor:Claire.McAlister@utc.edu
+Erin:Lumpkin:560 Amroha Circle:Erin.Lumpkin@utc.edu
+Roger:Gunderson:327 Loja Street:Roger.Gunderson@google.com
+Joseph:Lombardi:403 Kabul Boulevard:Joseph.Lombardi@chattstate.edu
+Samantha:Cromwell:830 Bisling Circle:Samantha.Cromwell@gmail.com
+Allison:Burleson:960 Workhaven Street:Allison.Burleson@gmail.com
+Craig:Pitt:586 Izumisano Parkway:Craig.Pitt@exchange.com
+Robert:Banda:181 Toulan Parkway:Robert.Banda@yahoo.com
+James:Gafney:763 Santiago Manor:James.Gafney@gmail.com
+Raymond:Oglesby:992 Antofagasta Drive:Raymond.Oglesby@facebook.com
+David:Gruber:360 Lillydale Way:David.Gruber@facebook.com
