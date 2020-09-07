@@ -14,6 +14,7 @@
     fclose($firstNamesFile);
 
     $firstNames = explode(',', $firstNames);
+    shuffle($firstNames);
 
     // print '<br>First Names: ';
     // print '<pre>';
@@ -34,6 +35,7 @@
     	}
     }
     fclose($lastNamesFile);
+    shuffle($lastNames);
 
     // print '<br>Last Names: ';
     // print '<pre>';
@@ -94,7 +96,7 @@
     for ($i = 0; $i < 25; $i++) {
     	$nameInd = rand(0, sizeof($streetAds) - 1);
     	$typeInd = rand(0, sizeof($streetTypes) - 1);
-    	$fullStreetAd = rand(100,999) . ' ' .  $streetAds[$nameInd] . ' ' . $streetTypes[$typeInd];
+    	$fullStreetAd = rand(100, 999) . ' ' . $streetAds[$nameInd] . ' ' . $streetTypes[$typeInd];
 
     	while (in_array($fullStreetAd, $fullStreetAds)) {
     		// print '<p>Duplicate street found, creating a new street</p>';
@@ -126,21 +128,19 @@
     $emailExtsFinal = [];
     $emailExts = explode('.', $emailExts);
     for ($i = 0; $i < sizeof($emailExts); $i++) {
-        if($i % 2 == 0){
-            $emailExtsEven[$i] = $emailExts[$i];
-        } 
-        else {
-            $emailExtsOdd[$i] = $emailExts[$i];            
-            
-        }
+    	if ($i % 2 == 0) {
+    		$emailExtsEven[$i] = $emailExts[$i];
+    	} else {
+    		$emailExtsOdd[$i] = $emailExts[$i];
+    	}
     }
     $emailExtsSum = $emailExtsEven + $emailExtsOdd;
     for ($i = 0; $i < sizeof($emailExts); $i++) {
-        if ($i % 2 == 0){
-            $emailExtsFinal[$i] = $emailExtsEven[$i].".".$emailExtsOdd[$i + 1];
-        }
+    	if ($i % 2 == 0) {
+    		$emailExtsFinal[$i] = $emailExtsEven[$i] . '.' . $emailExtsOdd[$i + 1];
+    	}
     }
-    
+
     // print '<pre>';
     // print_r($emailExts);
     // print_r($emailExtsEven);
@@ -154,18 +154,9 @@
     */
     $emailAds = [];
     for ($i = 0; $i < 25; $i++) {
-    	// $firstInd = rand(0, sizeof($firstNames) - 1);
-        // $lastInd = rand(0, sizeof($lastNames) - 1);
-        $extInd = rand(0, (sizeof($emailExts) / 2) - 1) * 2;
+    	$extInd = rand(0, sizeof($emailExts) / 2 - 1) * 2;
     	$emailAd = $firstNames[$i] . '.' . $lastNames[$i] . '@' . $emailExtsFinal[$extInd];
-    	// print "<p>$emailAd</p>";
 
-    	while (in_array($emailAd, $emailAds)) {
-    		// print '<p>Duplicate email found, creating a new name</p>';
-    		// $firstInd = rand(0, sizeof($firstNames) - 1);
-    		// $lastInd = rand(0, sizeof($lastNames) - 1);
-    		$emailAd = $firstNames[$firstInd] . ' ' . $lastNames[$lastInd];
-    	}
     	$emailAds[] = $emailAd;
     }
     // print '<br>Email Address Data: ';
@@ -173,34 +164,43 @@
     // print_r($emailAds);
     // print '</pre>';
 
-
-    print("<table border = '3' >");
+    print "<table border = '3' >";
 
     $dataHeaders = ['First Name', 'Last Name', 'Address', 'Email'];
-    for($x = 0; $x < 4; $x++) {
-        print("<th>$dataHeaders[$x]</th>");
+    for ($x = 0; $x < 4; $x++) {
+    	print "<th>$dataHeaders[$x]</th>";
     }
-    
-    
 
-//rows x columns
+    //rows x columns
     for ($x = 0; $x < 25; $x++) {
-        $customerInfo[$x][0] = $firstNames[$x];
-        $customerInfo[$x][1] = $lastNames[$x];
-        $customerInfo[$x][2] = $fullStreetAds[$x];
-        $customerInfo[$x][3] = $emailAds[$x];
-        
+    	$customerInfo[$x][0] = $firstNames[$x];
+    	$customerInfo[$x][1] = $lastNames[$x];
+    	$customerInfo[$x][2] = $fullStreetAds[$x];
+    	$customerInfo[$x][3] = $emailAds[$x];
     }
 
-    for($x = 0; $x < 25; $x++) {
-        print("<tr>");
-        for($y = 0; $y < 4; $y++) {
-            print("<td align='center'>" . $customerInfo[$x][$y] . "</td>");
-        }
-        print("</tr>");
+    for ($x = 0; $x < 25; $x++) {
+    	print '<tr>';
+    	for ($y = 0; $y < 4; $y++) {
+    		print "<td align='center'>" . $customerInfo[$x][$y] . '</td>';
+    	}
+    	print '</tr>';
     }
 
-    print("</table><br>");
+    print '</table><br>';
+
+    $customerArray = [];
+    for ($i = 0; $i < sizeof($customerInfo); $i++) {
+    	for ($j = 0; $j < sizeof($customerInfo[$i]); $j++) {
+    		$customerArray[] = $customerInfo[$i][$j];
+    	}
+    }
+
+    $customerArray = implode(':', $customerArray);
+    // $customerFile = fopen("customers.txt", "w");
+    // fwrite($customerFile, $customerArray);
+    // fclose($customerFile);
+    file_put_contents('customers.txt', $customerArray);
     ?>
 
 </html>
