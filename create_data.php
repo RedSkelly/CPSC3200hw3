@@ -105,42 +105,102 @@
     	$fullStreetAds[] = $fullStreetAd;
     }
 
-    print '<br>Full Addresses: ';
-    print '<pre>';
-    print_r($fullStreetAds);
-    print '</pre>';
+    // print '<br>Full Addresses: ';
+    // print '<pre>';
+    // print_r($fullStreetAds);
+    // print '</pre>';
 
     /*
     Email extension Data
     */
+    $emailExtFile = fopen('inputData/domains.txt', 'r');
+
+    $emailExts = fgets($emailExtFile);
+    $emailExts = str_replace(["\n", "\r"], '', $emailExts);
+
+    fclose($emailExtFile);
+
+    $emailExtsEven = [];
+    $emailExtsOdd = [];
+    $emailExtsSum = [];
+    $emailExtsFinal = [];
+    $emailExts = explode('.', $emailExts);
+    for ($i = 0; $i < sizeof($emailExts); $i++) {
+        if($i % 2 == 0){
+            $emailExtsEven[$i] = $emailExts[$i];
+        } 
+        else {
+            $emailExtsOdd[$i] = $emailExts[$i];            
+            
+        }
+    }
+    $emailExtsSum = $emailExtsEven + $emailExtsOdd;
+    for ($i = 0; $i < sizeof($emailExts); $i++) {
+        if ($i % 2 == 0){
+            $emailExtsFinal[$i] = $emailExtsEven[$i].".".$emailExtsOdd[$i + 1];
+        }
+    }
+    
+    // print '<pre>';
+    // print_r($emailExts);
+    // print_r($emailExtsEven);
+    // print_r($emailExtsOdd);
+    // print_r($emailExtsSum);
+    // print_r(array_values(array_filter($emailExtsFinal)));
+    // print '</pre>';
 
     /*
         Email Address Data
     */
     $emailAds = [];
     for ($i = 0; $i < 25; $i++) {
-    	$firstInd = rand(0, sizeof($firstNames) - 1);
-    	$lastInd = rand(0, sizeof($lastNames) - 1);
-    	$emailAd = $firstNames[$firstInd] . '.' . $lastNames[$lastInd];
+    	// $firstInd = rand(0, sizeof($firstNames) - 1);
+        // $lastInd = rand(0, sizeof($lastNames) - 1);
+        $extInd = rand(0, (sizeof($emailExts) / 2) - 1) * 2;
+    	$emailAd = $firstNames[$i] . '.' . $lastNames[$i] . '@' . $emailExtsFinal[$extInd];
     	// print "<p>$emailAd</p>";
 
     	while (in_array($emailAd, $emailAds)) {
     		// print '<p>Duplicate email found, creating a new name</p>';
-    		$firstInd = rand(0, sizeof($firstNames) - 1);
-    		$lastInd = rand(0, sizeof($lastNames) - 1);
+    		// $firstInd = rand(0, sizeof($firstNames) - 1);
+    		// $lastInd = rand(0, sizeof($lastNames) - 1);
     		$emailAd = $firstNames[$firstInd] . ' ' . $lastNames[$lastInd];
     	}
     	$emailAds[] = $emailAd;
     }
-    print '<br>Email Address Data: ';
-    print '<pre>';
-    print_r($emailAds);
-    print '</pre>';
+    // print '<br>Email Address Data: ';
+    // print '<pre>';
+    // print_r($emailAds);
+    // print '</pre>';
 
 
+    print("<table border = '3' >");
+
+    $dataHeaders = ['First Name', 'Last Name', 'Address', 'Email'];
+    for($x = 0; $x < 4; $x++) {
+        print("<th>$dataHeaders[$x]</th>");
+    }
+    
     
 
+//rows x columns
+    for ($x = 0; $x < 25; $x++) {
+        $customerInfo[$x][0] = $firstNames[$x];
+        $customerInfo[$x][1] = $lastNames[$x];
+        $customerInfo[$x][2] = $fullStreetAds[$x];
+        $customerInfo[$x][3] = $emailAds[$x];
+        
+    }
 
+    for($x = 0; $x < 25; $x++) {
+        print("<tr>");
+        for($y = 0; $y < 4; $y++) {
+            print("<td align='center'>" . $customerInfo[$x][$y] . "</td>");
+        }
+        print("</tr>");
+    }
+
+    print("</table><br>");
     ?>
 
 </html>
